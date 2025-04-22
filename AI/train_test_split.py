@@ -3,11 +3,11 @@ import random
 import shutil
 
 # Define your dataset directories
-image_dir = "/home/vijeth/major-project/AI/dataset/images"
-annotation_dir = "/home/vijeth/major-project/AI/dataset/converted_labels"
-train_dir = "/home/vijeth/major-project/AI/dataset/train"
-val_dir = "/home/vijeth/major-project/AI/dataset/val"
-test_dir = "/home/vijeth/major-project/AI/dataset/test"
+image_dir = './dataset/images'
+annotation_dir = './dataset/converted_labels'
+train_dir = './dataset/train'
+val_dir = './dataset/val'
+test_dir = './dataset/test'
 
 # Ensure output directories exist
 os.makedirs(train_dir, exist_ok=True)
