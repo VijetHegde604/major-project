@@ -54,3 +54,4 @@ dataset/
 - The `train/`, `val/`, and `test/` folders should be populated with their respective subsets of the dataset.
 - The script to convert annotations is at `/AI/convert_annotations.py`
 - The script to train test split is at `/AI/train_test_split.py`
+- Dataset downloaded from: https://www.kaggle.com/datasets/dataclusterlabs/indian-signboard-image-dataset?resource=download
