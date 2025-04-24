@@ -1,0 +1,19 @@
+# Path to the root directory of your dataset
+path: /home/vijeth/major-project/AI/dataset
+
+# Training set
+train: train/images
+
+# Validation set
+val: val/images
+
+# Number of classes
+nc: 1
+
+# Class names
+names: ['indian_signboard']
+
+# Test Set
+test: test/images
+
+cache: ram 
