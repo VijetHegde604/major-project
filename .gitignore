@@ -4,6 +4,8 @@ __pycache__/
 *$py.class
 
 */dataset/
+/runs/final_output
+/runs/predict
 
 # C extensions
 *.so
