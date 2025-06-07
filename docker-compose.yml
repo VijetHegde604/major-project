@@ -1,6 +1,7 @@
+version: '3.8'
+
 services:
   vpr-dino:
-    #image: vpr-dino-ai:latest
     build: .
     container_name: vpr-dino-ai
     command: python3 main.py
@@ -8,3 +9,4 @@ services:
       - 8000:8000
     volumes:
       - ./AI:/app/AI
+      - ./torch-cache:/root/.cache/torch/hub

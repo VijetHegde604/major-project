@@ -4,3 +4,5 @@ torchaudio==2.1.0
 faiss-cpu
 opencv-python
 matplotlib
+numpy 
+pillow

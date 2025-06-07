@@ -1,32 +1,26 @@
-import http.server
-import socketserver
+import torch
+from torchvision import transforms
+from PIL import Image
 
-# Define the port number for the server to listen on.
-PORT = 8000
+# Load lighter model → better for CPU
+dinov2_model = torch.hub.load('facebookresearch/dinov2', 'dinov2_vits14')
+dinov2_model.eval()
 
-# Define a custom request handler by inheriting from SimpleHTTPRequestHandler.
-# This handler will serve files from the current directory by default,
-# but we'll override its do_GET method to send a custom "Hello, World!" response.
-class MyHandler(http.server.SimpleHTTPRequestHandler):
-    def do_GET(self):
-        # Set the HTTP response status code to 200 (OK).
-        self.send_response(200)
+# Preprocessing
+transform = transforms.Compose([
+    transforms.Resize((518, 518)),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+])
 
-        # Set the Content-type header to indicate that the response is plain text.
-        self.send_header("Content-type", "text/plain")
+# Load image
+image = Image.open('MainBefore.jpg').convert('RGB')
+image_tensor = transform(image).unsqueeze(0)  # (1, 3, 518, 518)
 
-        # End the headers section.
-        self.end_headers()
+# Extract features on CPU
+with torch.no_grad():
+    features = dinov2_model(image_tensor)
 
-        # Send the "Hello, World!" message as bytes (UTF-8 encoded).
-        self.wfile.write(b"Hello, World!\n Working OK!! I hate niggers")
-
-# Create a TCP server that uses our custom handler.
-# The server will listen on all available network interfaces (empty string for host)
-# and the specified PORT.
-with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
-    print(f"Serving on port {PORT}")
-    print(f"You can access it at http://localhost:{PORT}/")
-
-    # Start the server and keep it running indefinitely until interrupted (e.g., Ctrl+C).
-    httpd.serve_forever()
+# Convert to numpy
+features_np = features.cpu().numpy().flatten()
+print("Feature vector shape:", features_np.shape)
