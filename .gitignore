@@ -3,10 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-*/dataset/
-/runs/final_output
-/runs/predict
-
 # C extensions
 *.so
 
