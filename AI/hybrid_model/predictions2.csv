@@ -1,0 +1,21 @@
+image_name,predicted_label,confidence,used_fallback
+img1_taj-mahal.jpg,taj-mahal,0.9135581,False
+img2_taj-mahal.jpg,taj-mahal,0.9147164,False
+img3_taj-mahal.jpg,taj-mahal,0.95002675,False
+img4_taj-mahal.jpg,taj-mahal,0.90071017,False
+img5_taj-mahal.jpg,taj-mahal,0.85542744,False
+img6_taj-mahal.jpg,taj-mahal,0.8638488,False
+img1_qutub-minar.jpg,qutub-minar,0.8550361,False
+img2_qutub-minar.jpg,qutub-minar,0.8207256,False
+img3_qutub-minar.jpg,qutub-minar,0.6240987,False
+img1_gateway-of-india.jpg,gateway-of-india,0.7807831,False
+img2_gateway-of-india.jpg,gateway-of-india,0.87910014,False
+img3_gateway-of-india.jpg,gateway-of-india,0.8083413,False
+img4_gateway-of-india.jpg,gateway-of-india,0.8780886,False
+img1_mysore-palace.jpg,mysore-palace,0.5962054,False
+img2_mysore-palace.jpg,mysore-palace,0.8009147,False
+img3_mysore-palace.jpg,mysore-palace,0.6258354,False
+img4_mysore-palace.jpg,mysore-palace,0.8203768,False
+img5_mysore-palace.jpg,mysore-palace,0.8065961,False
+WhatsApp Image 2025-06-18 at 4.47.28 PM (1).jpeg,taj-mahal,0.042570837,False
+WhatsApp Image 2025-06-18 at 4.47.28 PM.jpeg,taj-mahal,0.011920721,False
